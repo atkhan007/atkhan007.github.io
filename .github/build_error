@@ -1,0 +1,42 @@
+/usr/bin/git config --global --add safe.directory /home/runner/work/atkhan007.github.io/atkhan007.github.io
+/usr/bin/git config user.name atkhan007
+/usr/bin/git config user.email 57485146+atkhan007@users.noreply.github.com
+/usr/bin/git config core.ignorecase false
+/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+/usr/bin/git remote rm origin
+/usr/bin/git remote add origin ***github.com/atkhan007/atkhan007.github.io.git
+Git configured… 🔧
+Starting to commit changes…
+/usr/bin/git ls-remote --heads ***github.com/atkhan007/atkhan007.github.io.git refs/heads/public
+Creating worktree…
+/usr/bin/git worktree add --no-checkout --detach github-pages-deploy-action-temp-deployment-folder
+Preparing worktree (detached HEAD 9150a29)
+/usr/bin/git checkout --orphan public
+Switched to a new branch 'public'
+Created the public branch… 🔧
+/usr/bin/git reset --hard
+/usr/bin/git commit --no-verify --allow-empty -m Initial public commit
+[public (root-commit) d3d5ad5] Initial public commit
+/usr/bin/chmod -R +rw /home/runner/work/atkhan007.github.io/atkhan007.github.io/.next
+/usr/bin/rsync -q -av --checksum --progress /home/runner/work/atkhan007.github.io/atkhan007.github.io/.next/. github-pages-deploy-action-temp-deployment-folder --delete --exclude CNAME --exclude .ssh --exclude .git --exclude .github
+Checking if there are files to commit…
+/usr/bin/git add --all .
+/usr/bin/git checkout -b github-pages-deploy-action/kvvckkuu9
+Switched to a new branch 'github-pages-deploy-action/kvvckkuu9'
+/usr/bin/git commit -m Deploying to public from @ atkhan007/atkhan007.github.io@9150a296d4fd859c6816285135b818c8d474fde1 🚀 --quiet --no-verify
+Force-pushing changes...
+/usr/bin/git push --force ***github.com/atkhan007/atkhan007.github.io.git github-pages-deploy-action/kvvckkuu9:public
+remote: error: Trace: 886ebafb656cef4bbbdee224310cdd475ac5ef5071d346ac4f25877eeb1c1589        
+remote: error: See https://gh.io/lfs for more information.        
+remote: error: File cache/webpack/server-production/0.pack is 162.61 MB; this exceeds GitHub's file size limit of 100.00 MB        
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.        
+To https://github.com/atkhan007/atkhan007.github.io.git
+ ! [remote rejected] github-pages-deploy-action/kvvckkuu9 -> public (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/atkhan007/atkhan007.github.io.git'
+Running post deployment cleanup jobs… 🗑️
+/usr/bin/git checkout -B github-pages-deploy-action/kvvckkuu9
+Reset branch 'github-pages-deploy-action/kvvckkuu9'
+/usr/bin/chmod -R +rw github-pages-deploy-action-temp-deployment-folder
+/usr/bin/git worktree remove github-pages-deploy-action-temp-deployment-folder --force
+Error: The deploy step encountered an error: The process '/usr/bin/git' failed with exit code 1 ❌
+Notice: Deployment failed! ❌
